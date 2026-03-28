@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy · SpendSense</title>
+  <meta name="description" content="SpendSense Privacy Policy — your financial data stays on your device. No servers, no cloud, no exceptions.">
+  <meta property="og:title" content="Privacy Policy · SpendSense">
+  <meta property="og:description" content="Your data stays on your phone. SpendSense stores everything locally — no servers, no sharing, no exceptions.">
+  <meta name="theme-color" content="#0D1B11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0D1B11;
+      --surface:       #162A1A;
+      --surface-lift:  #1A3020;
+      --green:         #2ECC71;
+      --green-dark:    #27AE60;
+      --green-faint:   rgba(46, 204, 113, 0.07);
+      --green-border:  rgba(46, 204, 113, 0.18);
+      --text:          #FFFFFF;
+      --text-body:     #C8DCC9;
+      --text-muted:    #8BA88E;
+      --text-dim:      #4D6E54;
+      --border:        #1E3824;
+      --border-soft:   rgba(30, 56, 36, 0.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Navigation ──────────────────────────────────────────────────────── */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 27, 17, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+
+    .nav-pip {
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+    }
+
+    .nav-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--green); }
+
+    /* ── Layout ──────────────────────────────────────────────────────────── */
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────────── */
+
+    .hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-faint);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 56px);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .hero-lead {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.65;
+    }
+
+    .hero-meta {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .meta-chip .dot {
+      width: 5px;
+      height: 5px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── At a Glance ─────────────────────────────────────────────────────── */
+
+    .glance {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--green-border); }
+
+    .card-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── Content sections ────────────────────────────────────────────────── */
+
+    .content { padding: 64px 0 0; }
+
+    .section { margin-bottom: 60px; }
+
+    .section h2 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      padding-left: 16px;
+      border-left: 3px solid var(--green);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 28px 0 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .section p {
+      margin-bottom: 14px;
+      font-size: 15px;
+      color: var(--text-body);
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section strong { color: var(--text); font-weight: 600; }
+
+    .section code {
+      font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 12px;
+      background: var(--surface-lift);
+      color: var(--green);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ── Lists ───────────────────────────────────────────────────────────── */
+
+    ul.clean {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin: 14px 0 18px;
+    }
+
+    ul.clean li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    ul.clean li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 9px;
+    }
+
+    /* ── Callout box ─────────────────────────────────────────────────────── */
+
+    .callout {
+      background: var(--green-faint);
+      border: 1px solid var(--green-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 18px 0;
+    }
+
+    .callout p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .callout strong { color: var(--green); }
+
+    /* ── Permissions table ───────────────────────────────────────────────── */
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 18px 0;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+
+    thead tr { background: var(--surface); }
+
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-soft);
+      vertical-align: top;
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .perm-name {
+      font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 11.5px;
+      color: var(--green);
+      white-space: nowrap;
+      background: var(--green-faint);
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .required-yes {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .required-no {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* ── No sharing banner ───────────────────────────────────────────────── */
+
+    .zero-sharing {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .zero-sharing .big { font-size: 44px; margin-bottom: 16px; }
+
+    .zero-sharing h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+    }
+
+    .zero-sharing p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Contact card ────────────────────────────────────────────────────── */
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .contact-card .icon { font-size: 40px; flex-shrink: 0; }
+
+    .contact-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 5px;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .contact-card a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+      padding: 32px 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-pip {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    footer strong { color: var(--text-muted); font-weight: 600; }
+
+    /* ── Responsive ──────────────────────────────────────────────────────── */
+
+    @media (max-width: 620px) {
+      .cards { grid-template-columns: 1fr; }
+      .contact-card { flex-direction: column; text-align: center; }
+      footer { flex-direction: column; text-align: center; }
+      .hero h1 { letter-spacing: -1.2px; }
+      .hero-meta { gap: 8px; }
+    }
+
+    @media (max-width: 400px) {
+      .container { padding: 0 16px; }
+      nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-pip"></div>
+      <span class="nav-name">SpendSense</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="badge">🔒 &nbsp;Privacy First</div>
+    <h1>Your data stays<br><em>on your phone.</em></h1>
+    <p class="hero-lead">SpendSense is built on one principle: your financial life is private. Everything is stored on your device — no servers, no cloud, no exceptions.</p>
+    <div class="hero-meta">
+      <span class="meta-chip"><span class="dot"></span>Effective March 21, 2026</span>
+      <span class="meta-chip"><span class="dot"></span>SpendSense for Android</span>
+      <span class="meta-chip"><span class="dot"></span>Sri Lanka</span>
+    </div>
+  </section>
+
+  <!-- ── At a Glance ────────────────────────────────────────────────────────── -->
+  <section class="glance">
+    <p class="eyebrow">At a glance</p>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h3>Stored on-device only</h3>
+        <p>All transactions, budgets, and profile data live exclusively in your phone's local storage. There are no external servers.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💬</span>
+        <h3>SMS processed locally</h3>
+        <p>Bank messages are read and parsed on your device the moment they arrive. Raw SMS content is never transmitted anywhere.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🚫</span>
+        <h3>Zero data sharing</h3>
+        <p>We have no servers to send data to. Your information is never sold, rented, or shared with any third party — ever.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🗑️</span>
+        <h3>Delete anytime</h3>
+        <p>Uninstall SpendSense or clear app data in device Settings and every piece of information the app holds is permanently erased.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Content ────────────────────────────────────────────────────────────── -->
+  <div class="content">
+
+    <!-- 1. Introduction -->
+    <div class="section" id="introduction">
+      <h2>1. Introduction</h2>
+      <p>SpendSense ("we", "us", or "the app") is a personal finance application for Android that automatically captures bank transactions from SMS alerts and helps you track spending and manage monthly budgets. This Privacy Policy explains what information SpendSense collects, how it is used, and the choices you have regarding your data.</p>
+      <p>SpendSense operates entirely offline. We do not operate servers, do not collect analytics, and do not transmit any personal or financial information over the internet. The only network requests this app ever makes are to display this privacy policy and to load app fonts — your transaction data is never involved.</p>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="section" id="information">
+      <h2>2. Information We Collect</h2>
+      <p>All information described below is stored <strong>exclusively on your device</strong> inside the app's private storage, which is inaccessible to other apps on a non-rooted device.</p>
+
+      <h3>Transaction data</h3>
+      <p>When a bank SMS is received, or when you manually add a transaction, SpendSense stores:</p>
+      <ul class="clean">
+        <li>Transaction amount and currency (LKR)</li>
+        <li>Merchant or payee name (extracted from the SMS or entered by you)</li>
+        <li>Spending category (inferred from keyword rules or chosen by you)</li>
+        <li>Whether the transaction is a debit or credit</li>
+        <li>Date and time of the transaction</li>
+        <li>Whether the transaction was auto-captured from SMS or entered manually</li>
+      </ul>
+
+      <p>In production builds, raw SMS content is not retained after parsing. Only the extracted transaction fields listed above are stored — the original SMS body is discarded once the amount and merchant have been identified.</p>
+
+      <h3>Profile information</h3>
+      <p>Optionally, you may set a display name and a profile photo. Both are stored entirely on your device and can be changed or removed at any time in <strong>Settings → Profile</strong>. Neither is required for the app to function.</p>
+
+      <h3>Budget preferences</h3>
+      <p>Monthly spending limits you set for each category are stored in the app's local database.</p>
+
+      <h3>App settings</h3>
+      <p>Preferences such as whether biometric lock is enabled and the timestamp of your last manual backup are stored in the app's local preferences store on your device.</p>
+    </div>
+
+    <!-- 3. SMS Permission -->
+    <div class="section" id="sms">
+      <h2>3. SMS Permission &amp; Bank Message Processing</h2>
+
+      <div class="callout">
+        <p><strong>SpendSense requests the RECEIVE_SMS permission.</strong> This is the app's defining feature — automatically reading bank transaction alerts so you never have to enter spending data manually.</p>
+      </div>
+
+      <h3>Why we need it</h3>
+      <p>Sri Lankan banks send real-time transaction alerts as SMS messages. SpendSense listens for these messages to automatically extract the amount, merchant, and transaction type the moment they arrive — making expense tracking effortless.</p>
+
+      <h3>Exactly how it works</h3>
+      <ul class="clean">
+        <li>SpendSense registers a background listener for new incoming SMS messages using Android's standard broadcast system</li>
+        <li>When an SMS arrives, the sender ID is checked against a hardcoded list of known Sri Lankan bank sender identifiers (e.g. SAMPATH, COMBK, HNB, BOC, NSB, SEYLAN, NTB, and others)</li>
+        <li>If the sender does not match any known bank ID, the message is immediately discarded without any processing or storage</li>
+        <li>If the sender matches, the message body is parsed on-device to extract the transaction amount, merchant name, and credit/debit status</li>
+        <li>Only the extracted transaction fields, plus a truncated copy of the SMS body (max 500 characters), are saved to the local database</li>
+        <li>OTP messages, promotional messages, and other non-transaction SMS from bank senders are identified and discarded without storage</li>
+      </ul>
+
+      <h3>What we never do</h3>
+      <ul class="clean">
+        <li>We do not read your existing SMS inbox — only new messages arriving in real time are intercepted</li>
+        <li>We do not transmit SMS content to any server, cloud service, or third party</li>
+        <li>We do not process messages from senders outside the known bank sender ID list</li>
+        <li>We do not store the full raw SMS text permanently — only a truncated reference copy (max 500 characters) stored locally</li>
+      </ul>
+
+      <h3>Revoking SMS access</h3>
+      <p>You can revoke this permission at any time: <strong>Settings → Apps → SpendSense → Permissions → SMS → Deny</strong>. SpendSense will continue to work normally for manual transaction entry; only automatic SMS capture will stop.</p>
+    </div>
+
+    <!-- 4. Permissions -->
+    <div class="section" id="permissions">
+      <h2>4. Permissions We Request</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Why it's needed</th>
+              <th>Mandatory?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="perm-name">RECEIVE_SMS</span></td>
+              <td>Intercepts incoming bank SMS messages to automatically capture transactions. The app's core feature.</td>
+              <td><span class="required-no">Optional — app works without it</span></td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">USE_BIOMETRIC</span><br><span class="perm-name">USE_FINGERPRINT</span></td>
+              <td>Locks the app with your fingerprint, face, or device PIN. Only activated if you enable it in Settings.</td>
+              <td><span class="required-no">Optional — off by default</span></td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">POST_NOTIFICATIONS</span></td>
+              <td>Shows a notification when a transaction is captured from SMS, so you can review it immediately. Android 13+ only.</td>
+              <td><span class="required-no">Optional — app works without it</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 5. How We Use It -->
+    <div class="section" id="use">
+      <h2>5. How We Use Your Information</h2>
+      <p>All information in SpendSense is used solely to operate the app's features on your device. Specifically:</p>
+      <ul class="clean">
+        <li>Displaying your transaction history and monthly spending summaries</li>
+        <li>Categorising transactions and showing breakdowns by spending category</li>
+        <li>Comparing your spending against the monthly budget limits you set</li>
+        <li>Personalising the app interface with your name and photo</li>
+        <li>Enabling biometric authentication when you choose to activate it</li>
+        <li>Sending a local notification when a bank transaction is automatically captured</li>
+      </ul>
+      <p>We do not use your information for advertising, profiling, behavioural analytics, product research, or any purpose other than directly operating the features described above on your own device.</p>
+    </div>
+
+    <!-- 6. Data Storage -->
+    <div class="section" id="storage">
+      <h2>6. Data Storage &amp; Security</h2>
+      <p>SpendSense stores all data in two local Android storage systems, both residing in the app's private directory on your device:</p>
+      <ul class="clean">
+        <li><strong>Room (SQLite) database</strong> — stores transactions, category rules, and budget limits. This database file is inaccessible to other apps without root access.</li>
+        <li><strong>DataStore Preferences</strong> — stores your profile name, photo file path, biometric lock setting, and onboarding state.</li>
+      </ul>
+      <p>SpendSense sets <code>android:allowBackup="false"</code> in its manifest, which prevents Android from including app data in Google's automatic cloud backup. Your data never leaves your device through system backup channels.</p>
+
+      <h3>Device security</h3>
+      <p>Your data is as secure as your device. We strongly recommend setting a screen lock on your phone and enabling SpendSense's biometric lock feature (<strong>Settings → Security</strong>) for an additional layer of protection against unauthorised access.</p>
+    </div>
+
+    <!-- 7. Backup -->
+    <div class="section" id="backup">
+      <h2>7. Manual Backup &amp; Restore</h2>
+      <p>SpendSense includes a manual backup feature (<strong>Settings → Data &amp; Backup</strong>) that exports your transaction history as a JSON file to wherever you choose on your device.</p>
+      <ul class="clean">
+        <li>Backup creation is always initiated by you — it never happens automatically in the background</li>
+        <li>When you create a backup, Android's share sheet appears and you decide where to save or send it (local storage, a cloud drive, email, etc.)</li>
+        <li>The backup file contains your parsed transaction records — amount, merchant, category, and date. Raw SMS content is never included in backup exports</li>
+        <li>SpendSense has no visibility into, or control over, what you do with the backup file once it has been exported</li>
+        <li>If you choose to store a backup in a cloud service (e.g. Google Drive, Dropbox), that service's own privacy policy applies to that file</li>
+      </ul>
+    </div>
+
+    <!-- 8. Data Sharing -->
+    <div class="section" id="sharing">
+      <h2>8. Data Sharing</h2>
+      <div class="zero-sharing">
+        <div class="big">🔐</div>
+        <h3>We share nothing. With no one.</h3>
+        <p>SpendSense has no backend servers, no analytics SDK, no advertising SDK, and no third-party integrations of any kind. There is no technical mechanism by which your data can leave your device without your explicit action.</p>
+      </div>
+    </div>
+
+    <!-- 9. Your Rights -->
+    <div class="section" id="rights">
+      <h2>9. Your Rights &amp; Controls</h2>
+      <p>Because all data is stored locally on your device, you have direct, complete control over it at all times:</p>
+      <ul class="clean">
+        <li><strong>View</strong> — all transactions, budgets, and settings are visible within the app</li>
+        <li><strong>Edit transactions</strong> — tap any transaction to correct the amount, merchant, category, or date</li>
+        <li><strong>Delete a transaction</strong> — tap any transaction, then choose Delete</li>
+        <li><strong>Update your profile</strong> — change or remove your name and photo at any time in Settings → Profile</li>
+        <li><strong>Revoke SMS permission</strong> — device Settings → Apps → SpendSense → Permissions → SMS</li>
+        <li><strong>Export your data</strong> — Settings → Data &amp; Backup → Create Backup produces a portable JSON file</li>
+        <li><strong>Delete everything</strong> — uninstall SpendSense, or go to device Settings → Apps → SpendSense → Storage → Clear Data. This is immediate and permanent.</li>
+      </ul>
+    </div>
+
+    <!-- 10. Retention -->
+    <div class="section" id="retention">
+      <h2>10. Data Retention</h2>
+      <p>SpendSense retains your data for as long as you choose to keep the app installed and do not manually delete it. There is no automatic expiry or deletion of data within the app. Because all data is stored locally, you — not us — control exactly how long it is kept.</p>
+    </div>
+
+    <!-- 11. Children -->
+    <div class="section" id="children">
+      <h2>11. Children's Privacy</h2>
+      <p>SpendSense is a personal finance tool intended for adults. The app is not directed at children under the age of 13 and we do not knowingly collect personal information from children. If you believe a child has used the app, please uninstall it and clear the app data from device Settings.</p>
+    </div>
+
+    <!-- 12. Changes -->
+    <div class="section" id="changes">
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy as the app evolves. When changes are made, the "Effective" date at the top of this page will be updated. Material changes will be highlighted prominently. We encourage you to review this page periodically.</p>
+      <p>Continued use of SpendSense after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 13. Contact -->
+    <div class="section" id="contact">
+      <h2>13. Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out:</p>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <div>
+          <h3>Privacy Enquiries</h3>
+          <p>Email us at <a href="mailto:spendsense.support@gmail.com">spendsense.support@gmail.com</a></p>
+          <p style="margin-top: 4px;">We aim to respond to all privacy enquiries within 5 business days.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-pip"></div>
+      <p><strong>SpendSense</strong></p>
+    </div>
+    <p>© 2026 SpendSense · <a href="index.html" style="color: var(--text-dim); text-decoration: none;">Home</a> · <a href="support.html" style="color: var(--text-dim); text-decoration: none;">Support</a> · Last updated March 28, 2026</p>
+  </footer>
+
+</div><!-- /container -->
+</body>
+</html>

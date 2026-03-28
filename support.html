@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — SpendSense</title>
+  <meta name="description" content="SpendSense support and frequently asked questions. Find answers about SMS capture, supported banks, privacy, and managing your data.">
+  <meta name="theme-color" content="#0D1B11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0D1B11;
+      --surface:      #162A1A;
+      --surface-lift: #1A3020;
+      --green:        #2ECC71;
+      --green-dark:   #27AE60;
+      --green-faint:  rgba(46, 204, 113, 0.07);
+      --green-border: rgba(46, 204, 113, 0.18);
+      --text:         #FFFFFF;
+      --text-body:    #C8DCC9;
+      --text-muted:   #8BA88E;
+      --text-dim:     #4D6E54;
+      --border:       #1E3824;
+      --border-soft:  rgba(30, 56, 36, 0.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────────────────── */
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13, 27, 17, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 58px;
+      display: flex; align-items: center;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 780px; width: 100%; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-pip { width: 9px; height: 9px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px rgba(46, 204, 113, 0.5); }
+    .nav-name { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--green); }
+
+    /* ── Container ────────────────────────────────────────────────────────── */
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Hero ─────────────────────────────────────────────────────────────── */
+
+    .hero { padding: 80px 0 64px; border-bottom: 1px solid var(--border); }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green-faint); border: 1px solid var(--green-border);
+      color: var(--green); font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 800; color: var(--text);
+      line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px;
+    }
+    .hero h1 em { font-style: normal; color: var(--green); }
+    .hero-lead { font-size: 17px; color: var(--text-muted); max-width: 500px; line-height: 1.65; }
+
+    /* ── FAQ ──────────────────────────────────────────────────────────────── */
+
+    .faq-block { padding: 64px 0; border-bottom: 1px solid var(--border); }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--green); margin-bottom: 8px;
+    }
+    .faq-block-title {
+      font-size: 22px; font-weight: 700; color: var(--text);
+      letter-spacing: -0.5px; margin-bottom: 28px;
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.2s;
+      overflow: hidden;
+    }
+    details[open] { border-color: var(--green-border); }
+
+    summary {
+      padding: 18px 20px;
+      font-size: 15px; font-weight: 600; color: var(--text);
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      user-select: none;
+      transition: color 0.15s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { color: var(--green); }
+    details[open] summary { color: var(--green); }
+
+    .faq-icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      background: var(--green-faint); border: 1px solid var(--green-border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 400; color: var(--green);
+      line-height: 1; transition: transform 0.2s;
+    }
+    details[open] .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 16px;
+      font-size: 14px; color: var(--text-body); line-height: 1.7;
+    }
+    .faq-answer p { margin-bottom: 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+
+    .faq-answer ul {
+      list-style: none; margin: 12px 0; display: flex; flex-direction: column; gap: 8px;
+    }
+    .faq-answer ul li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--text-body); line-height: 1.6;
+    }
+    .faq-answer ul li::before {
+      content: '';
+      width: 5px; height: 5px; min-width: 5px;
+      background: var(--green); border-radius: 50%;
+      margin-top: 8px;
+    }
+
+    .faq-answer code {
+      font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 12px; color: var(--green);
+      background: var(--surface-lift); padding: 2px 6px; border-radius: 4px;
+    }
+    .faq-answer strong { color: var(--text); font-weight: 600; }
+    .faq-answer a { color: var(--green); text-decoration: none; }
+    .faq-answer a:hover { text-decoration: underline; }
+
+    /* ── Banks table inside FAQ ───────────────────────────────────────────── */
+
+    .bank-list {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+    }
+    .bank-tag {
+      font-size: 12px; font-weight: 500; color: var(--text-muted);
+      background: var(--surface-lift); border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 10px;
+    }
+
+    /* ── Contact ──────────────────────────────────────────────────────────── */
+
+    .contact-section { padding: 64px 0; }
+    .contact-section-title {
+      font-size: 28px; font-weight: 800; color: var(--text);
+      letter-spacing: -0.8px; margin-bottom: 8px;
+    }
+    .contact-section-lead { font-size: 15px; color: var(--text-muted); margin-bottom: 32px; }
+
+    .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: var(--green-border); }
+
+    .contact-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+    .contact-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.2px; }
+    .contact-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .contact-card a {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--green); text-decoration: none; font-size: 14px; font-weight: 600;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+    .response-note { font-size: 12px; color: var(--text-dim); margin-top: 8px; display: block; }
+
+    /* ── Footer ───────────────────────────────────────────────────────────── */
+
+    .footer-wrap { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+    .footer-inner {
+      max-width: 780px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 8px; }
+    .footer-pip   { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+    .footer-brand span { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+    .footer-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: var(--text-dim); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy  { font-size: 13px; color: var(--text-dim); }
+
+    /* ── Responsive ───────────────────────────────────────────────────────── */
+
+    @media (max-width: 580px) {
+      .contact-cards { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 13px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (max-width: 400px) {
+      .container { padding: 0 16px; }
+      nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-pip"></div>
+      <span class="nav-name">SpendSense</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html" class="active">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="badge">💬 &nbsp;Help Centre</div>
+    <h1>How can we<br><em>help you?</em></h1>
+    <p class="hero-lead">Find answers to common questions below. If you can't find what you're looking for, email us directly — we respond within 2 business days.</p>
+  </section>
+
+  <!-- ── Getting Started ──────────────────────────────────────────────────── -->
+  <section class="faq-block" id="getting-started">
+    <p class="eyebrow">Getting started</p>
+    <h2 class="faq-block-title">Setup &amp; SMS capture</h2>
+    <div class="faq-list">
+
+      <details>
+        <summary>
+          How does automatic transaction capture work?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>When your bank sends a transaction SMS, SpendSense intercepts it in the background the moment it arrives. The sender ID is checked against a hardcoded list of known Sri Lankan bank SMS sender identifiers.</p>
+          <p>If the sender matches, the message body is parsed entirely on your device to extract the transaction amount, merchant name, and whether it's a debit or credit. The result is saved to your local database in seconds — without opening the app and without any server contact.</p>
+          <p>OTP messages, promotional messages, and balance enquiry replies from bank senders are identified and silently discarded — only genuine transaction alerts are captured.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Which Sri Lankan banks are supported?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>SpendSense automatically recognises SMS from the following banks and their known sender IDs:</p>
+          <div class="bank-list">
+            <span class="bank-tag">Sampath Bank</span>
+            <span class="bank-tag">Commercial Bank of Ceylon</span>
+            <span class="bank-tag">Bank of Ceylon</span>
+            <span class="bank-tag">People's Bank</span>
+            <span class="bank-tag">Hatton National Bank (HNB)</span>
+            <span class="bank-tag">National Savings Bank (NSB)</span>
+            <span class="bank-tag">NDB Bank</span>
+            <span class="bank-tag">Seylan Bank</span>
+            <span class="bank-tag">Pan Asia Banking Corporation</span>
+            <span class="bank-tag">Union Bank Sri Lanka</span>
+          </div>
+          <p style="margin-top: 14px;">Your bank not listed? Enable <strong>Smart Sender Detection</strong> in Settings. SpendSense will learn new bank SMS senders automatically over time based on transaction patterns.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          I granted SMS permission but transactions aren't being captured — why?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>A few things to check:</p>
+          <ul>
+            <li>Confirm the SMS is from a supported bank (see the list above). If your bank isn't listed, try enabling Smart Sender Detection in Settings.</li>
+            <li>Some banks change their SMS sender IDs periodically. If your bank recently changed its sender ID, it may not match yet. Contact us with an example and we'll add it.</li>
+            <li>On dual-SIM phones, make sure the SIM receiving bank SMS is set as the default SMS SIM in your device settings.</li>
+            <li>Ensure SpendSense is not being killed by battery optimisation. Go to device Settings → Battery → SpendSense → set to "Unrestricted" or "Don't optimise".</li>
+            <li>OTP messages, promotional messages, and balance alerts are intentionally ignored — only debit/credit transaction alerts are captured.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Can I use SpendSense without giving SMS permission?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Yes. SpendSense works fully without SMS permission — you can add transactions manually by tapping the <strong>+</strong> button in the navigation bar. You can also edit, categorise, and delete any transaction, and use all budgeting and insights features.</p>
+          <p>Only the automatic SMS capture feature requires the permission. If you later decide to grant it, you can do so at any time in <strong>Settings → SMS Permission</strong>.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ── Privacy & Data ────────────────────────────────────────────────────── -->
+  <section class="faq-block" id="privacy-data">
+    <p class="eyebrow">Privacy &amp; data</p>
+    <h2 class="faq-block-title">Your data, your control</h2>
+    <div class="faq-list">
+
+      <details>
+        <summary>
+          Does SpendSense read all my SMS messages?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>No. SpendSense only processes messages from a hardcoded list of known Sri Lankan bank sender IDs. Messages from any other sender — friends, other services, or banks not on the list — are immediately discarded without any processing or storage.</p>
+          <p>SpendSense does not read your existing SMS inbox. It only intercepts new messages as they arrive in real time.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Is my data uploaded anywhere?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>No. SpendSense has no servers. All your transaction data is stored exclusively in your phone's private local storage, which is inaccessible to other apps on a non-rooted device.</p>
+          <p>SpendSense contains no analytics SDKs, no crash reporting frameworks, and no advertising libraries. There is no technical mechanism by which your data can leave your device without your explicit action (the manual backup feature).</p>
+          <p>SpendSense also sets <code>android:allowBackup="false"</code>, which prevents Android from silently including your transaction data in Google's automatic cloud backup.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          How do I delete a specific transaction?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Tap any transaction on the Home or Transactions screen. The edit sheet will slide up. Scroll down and tap <strong>Delete Transaction</strong>, then confirm. The transaction is permanently and immediately removed from your local database.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          How do I delete all my data permanently?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Two options, both immediate and irreversible:</p>
+          <ul>
+            <li><strong>Uninstall SpendSense</strong> — all data is erased along with the app.</li>
+            <li><strong>Clear app data</strong> — go to your device Settings → Apps → SpendSense → Storage → Clear Data. The app remains installed but starts fresh.</li>
+          </ul>
+          <p>If you plan to reinstall or switch phones, create a backup first via <strong>Settings → Data &amp; Backup → Create Backup</strong> before clearing.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          How do I turn off SMS access?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Go to your device <strong>Settings → Apps → SpendSense → Permissions → SMS → Deny</strong>.</p>
+          <p>SpendSense will continue to work normally for manual transaction entry, budgeting, and insights — only automatic SMS capture will stop. You can re-grant the permission at any time through <strong>Settings → SMS Permission</strong> inside the app.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          What happens to my data if I uninstall the app?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>All your data is permanently erased. Because SpendSense stores everything locally with no cloud copy, uninstalling is a complete and irreversible deletion.</p>
+          <p>If you may reinstall later or switch to a new phone, export a backup first: <strong>Settings → Data &amp; Backup → Create Backup</strong>. Save the file somewhere you control — Google Drive, local storage, or email it to yourself.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ── Transactions & Features ───────────────────────────────────────────── -->
+  <section class="faq-block" id="transactions">
+    <p class="eyebrow">Transactions &amp; features</p>
+    <h2 class="faq-block-title">Using the app</h2>
+    <div class="faq-list">
+
+      <details>
+        <summary>
+          A transaction was captured with the wrong amount or merchant — how do I fix it?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Tap the transaction to open the edit sheet. You can correct the amount, merchant name, category, and date. Tap <strong>Save</strong> to update it. SpendSense will also learn your correction for that merchant and apply it to future transactions automatically.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          How do I add a cash transaction manually?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Tap the <strong>+</strong> button in the centre of the bottom navigation bar. Enter the amount, merchant or payee name, category, and date. Tap <strong>Save</strong>. The transaction appears in your history immediately.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          What is Smart Sender Detection?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>An optional feature that lets SpendSense capture transactions from banks not yet on the built-in sender ID list. When enabled, incoming SMS from unrecognised senders are briefly scanned in-memory for transaction patterns — nothing is stored unless a bank transaction is positively identified.</p>
+          <p>If a sender consistently sends transaction-style messages, SpendSense learns it and starts capturing those automatically. You can review and remove learned senders at any time in <strong>Settings → Smart Sender Detection</strong>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          How does the backup and restore feature work?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Go to <strong>Settings → Data &amp; Backup → Create Backup</strong>. Android's share sheet appears and you choose where to save the file — local storage, Google Drive, email, or any other app. The backup is a portable JSON file containing your transactions and budget settings.</p>
+          <p>To restore, tap <strong>Restore</strong> in the same section and select a SpendSense backup file. A preview shows you what's in the file before you confirm. <strong>Note:</strong> restoring replaces all your current data — export a fresh backup first if you want to keep it.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ── Contact ───────────────────────────────────────────────────────────── -->
+  <section class="contact-section" id="contact">
+    <h2 class="contact-section-title">Still need help?</h2>
+    <p class="contact-section-lead">We're a small team and we read every message. Email us and we'll get back to you.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <span class="contact-icon">✉️</span>
+        <h3>General Support</h3>
+        <p>Questions about the app, a feature that isn't working, or anything else — reach out and we'll help.</p>
+        <a href="mailto:spendsense.support@gmail.com">spendsense.support@gmail.com</a>
+        <span class="response-note">We aim to respond within 2 business days.</span>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon">🔒</span>
+        <h3>Privacy Enquiries</h3>
+        <p>Questions about your data, how SMS is handled, or requests to understand what SpendSense stores.</p>
+        <a href="mailto:spendsense.support@gmail.com">spendsense.support@gmail.com</a>
+        <a href="privacy.html" style="display:block; margin-top: 10px; font-size: 13px; color: var(--text-dim);">Read our Privacy Policy →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+<footer class="footer-wrap">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-pip"></div>
+      <span>SpendSense</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="mailto:spendsense.support@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 SpendSense</p>
+  </div>
+</footer>
+
+</body>
+</html>
