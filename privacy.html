@@ -573,7 +573,7 @@
     <div class="section" id="introduction">
       <h2>1. Introduction</h2>
       <p>SpendSense ("we", "us", or "the app") is a personal finance application for Android that automatically captures bank transactions from SMS alerts and helps you track spending and manage monthly budgets. This Privacy Policy explains what information SpendSense collects, how it is used, and the choices you have regarding your data.</p>
-      <p>SpendSense operates entirely offline. We do not operate servers, do not collect analytics, and do not transmit any personal or financial information over the internet. The only network requests this app ever makes are to display this privacy policy and to load app fonts — your transaction data is never involved.</p>
+      <p>SpendSense stores all your financial data exclusively on your device. We do not operate servers, do not collect analytics, and do not transmit any personal or financial information over the internet. The only network requests this app ever makes are to verify your subscription status with Google Play Billing, to display this privacy policy, and to load app fonts — your transaction data is never involved in any network request.</p>
     </div>
 
     <!-- 2. Information We Collect -->
@@ -618,7 +618,7 @@
       <h3>Exactly how it works</h3>
       <ul class="clean">
         <li>SpendSense registers a background listener for new incoming SMS messages using Android's standard broadcast system</li>
-        <li>When an SMS arrives, the sender ID is checked against a hardcoded list of known Sri Lankan bank sender identifiers (e.g. SAMPATH, COMBK, HNB, BOC, NSB, SEYLAN, NTB, and others)</li>
+        <li>When an SMS arrives, the sender ID is checked against a hardcoded list of known Sri Lankan bank sender identifiers (e.g. SAMPATH, COMBK, HNB, BOC, NSB, SEYLAN, NationsSMS, and others)</li>
         <li>If the sender does not match any known bank ID, the message is immediately discarded without any processing or storage</li>
         <li>If the sender matches, the message body is parsed on-device to extract the transaction amount, merchant name, and credit/debit status</li>
         <li>Only the extracted transaction fields, plus a truncated copy of the SMS body (max 500 characters), are saved to the local database</li>
@@ -665,6 +665,11 @@
               <td>Shows a notification when a transaction is captured from SMS, so you can review it immediately. Android 13+ only.</td>
               <td><span class="required-no">Optional — app works without it</span></td>
             </tr>
+            <tr>
+              <td><span class="perm-name">INTERNET</span></td>
+              <td>Required to verify your subscription status with Google Play Billing. Also used to display this privacy policy and load app fonts. Your transaction data is never transmitted.</td>
+              <td><span class="required-yes">✓ Required</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -683,6 +688,9 @@
         <li>Sending a local notification when a bank transaction is automatically captured</li>
       </ul>
       <p>We do not use your information for advertising, profiling, behavioural analytics, product research, or any purpose other than directly operating the features described above on your own device.</p>
+
+      <h3>Subscription &amp; free trial</h3>
+      <p>SpendSense includes a 30-day free trial followed by an optional monthly subscription (SpendSense Pro), processed entirely through Google Play Billing. SpendSense does not handle payment information directly — all billing is managed by Google. The app contacts Google Play solely to verify whether your subscription is active. No financial transaction data you track in the app is shared with Google or any other party for billing purposes.</p>
     </div>
 
     <!-- 6. Data Storage -->
@@ -690,7 +698,8 @@
       <h2>6. Data Storage &amp; Security</h2>
       <p>SpendSense stores all data in two local Android storage systems, both residing in the app's private directory on your device:</p>
       <ul class="clean">
-        <li><strong>Room (SQLite) database</strong> — stores transactions, category rules, and budget limits. This database file is inaccessible to other apps without root access.</li>
+        <li><strong>Room (SQLite) database</strong> — stores transactions, category rules, and budget limits. This database is encrypted with AES-256 using SQLCipher. The encryption key is generated randomly at first launch and stored in Android Keystore, which is hardware-backed on supported devices.</li>
+        <li><strong>Encrypted SharedPreferences</strong> — stores security-sensitive preferences (such as subscription trial state) using Android Keystore-backed AES-256-GCM encryption.</li>
         <li><strong>DataStore Preferences</strong> — stores your profile name, photo file path, biometric lock setting, and onboarding state.</li>
       </ul>
       <p>SpendSense sets <code>android:allowBackup="false"</code> in its manifest, which prevents Android from including app data in Google's automatic cloud backup. Your data never leaves your device through system backup channels.</p>
@@ -777,7 +786,7 @@
       <div class="footer-pip"></div>
       <p><strong>SpendSense</strong></p>
     </div>
-    <p>© 2026 SpendSense · <a href="index.html" style="color: var(--text-dim); text-decoration: none;">Home</a> · <a href="support.html" style="color: var(--text-dim); text-decoration: none;">Support</a> · Last updated March 28, 2026</p>
+    <p>© 2026 SpendSense · <a href="index.html" style="color: var(--text-dim); text-decoration: none;">Home</a> · <a href="support.html" style="color: var(--text-dim); text-decoration: none;">Support</a> · Last updated April 3, 2026</p>
   </footer>
 
 </div><!-- /container -->
