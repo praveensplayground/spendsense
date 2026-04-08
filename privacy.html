@@ -573,7 +573,7 @@
     <div class="section" id="introduction">
       <h2>1. Introduction</h2>
       <p>SpendSense ("we", "us", or "the app") is a personal finance application for Android that automatically captures bank transactions from SMS alerts and helps you track spending and manage monthly budgets. This Privacy Policy explains what information SpendSense collects, how it is used, and the choices you have regarding your data.</p>
-      <p>SpendSense stores all your financial data exclusively on your device. We do not operate servers, do not collect analytics, and do not transmit any personal or financial information over the internet. The only network requests this app ever makes are to verify your subscription status with Google Play Billing, to display this privacy policy, and to load app fonts — your transaction data is never involved in any network request.</p>
+      <p>SpendSense stores all your financial data exclusively on your device. We do not operate servers and do not transmit any personal or financial information over the internet. The only network requests this app makes are: to verify your subscription status with Google Play Billing, to send anonymous crash reports and usage events to Firebase (Google) for app improvement, to display this privacy policy, and to load app fonts. Your transaction data, merchant names, and financial details are never involved in any network request.</p>
     </div>
 
     <!-- 2. Information We Collect -->
@@ -602,6 +602,17 @@
 
       <h3>App settings</h3>
       <p>Preferences such as whether biometric lock is enabled and the timestamp of your last manual backup are stored in the app's local preferences store on your device.</p>
+
+      <h3>Anonymous usage analytics</h3>
+      <p>In release builds only, SpendSense uses <strong>Firebase Analytics</strong> (Google) to collect anonymous, aggregated behavioural events. These events include:</p>
+      <ul class="clean">
+        <li>Which screens are viewed and how often (e.g. Dashboard, Insights, Trends)</li>
+        <li>App open frequency (collected automatically by Firebase)</li>
+        <li>Whether the user completed onboarding</li>
+        <li>Whether the paywall was viewed</li>
+        <li>Whether a subscription was started</li>
+      </ul>
+      <p>No transaction amounts, merchant names, account information, or any personally identifiable information are included in these events. Analytics collection is disabled entirely in debug builds.</p>
     </div>
 
     <!-- 3. SMS Permission -->
@@ -727,7 +738,7 @@
       <div class="zero-sharing">
         <div class="big">🔐</div>
         <h3>We share nothing. With no one.</h3>
-        <p>SpendSense has no backend servers, no analytics SDK, no advertising SDK, and no third-party integrations of any kind. There is no technical mechanism by which your data can leave your device without your explicit action.</p>
+        <p>SpendSense has no backend servers, no advertising SDK, and no data-selling integrations of any kind. The only third-party SDKs are Firebase Crashlytics (crash reporting) and Firebase Analytics (anonymous usage events) — both operated by Google. No financial data, transaction amounts, merchant names, or personally identifiable information is ever shared with these or any other party.</p>
       </div>
     </div>
 
@@ -773,7 +784,7 @@
 
       <h3>What is deleted and what is kept</h3>
       <p>When you uninstall or clear app data, <strong>all data is deleted immediately with no retention period</strong>. SpendSense holds no copies of your data on any server — once deleted from your device, it is gone permanently and cannot be recovered by us or anyone else.</p>
-      <p>The only exception is anonymous crash reports sent to Firebase Crashlytics (if a crash occurred in a release build). These reports contain no transaction data, no personal information, and no financial data — only technical stack traces. Firebase retains these for 90 days per their own policy.</p>
+      <p>The only exceptions are anonymous data held by Firebase (Google): crash reports (Crashlytics) and usage events (Analytics). These contain no transaction data, no personal information, and no financial data. Firebase retains crash reports for 90 days and analytics events per Google's standard retention settings. Neither can be individually deleted by us as they are anonymous and not linked to your identity.</p>
 
       <p style="margin-top: 16px;">Questions about data deletion? Email <a href="mailto:spendsense.support@gmail.com" style="color: var(--green);">spendsense.support@gmail.com</a> and we will respond within 5 business days.</p>
     </div>
@@ -818,7 +829,7 @@
       <div class="footer-pip"></div>
       <p><strong>SpendSense</strong></p>
     </div>
-    <p>© 2026 SpendSense · <a href="index.html" style="color: var(--text-dim); text-decoration: none;">Home</a> · <a href="support.html" style="color: var(--text-dim); text-decoration: none;">Support</a> · Last updated April 7, 2026</p>
+    <p>© 2026 SpendSense · <a href="index.html" style="color: var(--text-dim); text-decoration: none;">Home</a> · <a href="support.html" style="color: var(--text-dim); text-decoration: none;">Support</a> · Last updated April 8, 2026</p>
   </footer>
 
 </div><!-- /container -->
