@@ -298,8 +298,16 @@
             <span class="bank-tag">Seylan Bank</span>
             <span class="bank-tag">Pan Asia Banking Corporation</span>
             <span class="bank-tag">Union Bank Sri Lanka</span>
+            <span class="bank-tag">Nations Trust Bank (NTB)</span>
+            <span class="bank-tag">FriMi</span>
+            <span class="bank-tag">DFCC Bank</span>
+            <span class="bank-tag">Cargills Bank</span>
+            <span class="bank-tag">Amana Bank</span>
+            <span class="bank-tag">HSBC Sri Lanka</span>
+            <span class="bank-tag">Standard Chartered</span>
+            <span class="bank-tag">MCB Bank</span>
           </div>
-          <p style="margin-top: 14px;">Your bank not listed? Enable <strong>Smart Sender Detection</strong> in Settings. SpendSense will learn new bank SMS senders automatically over time based on transaction patterns.</p>
+          <p style="margin-top: 14px;">Your bank not listed? Contact us at <a href="mailto:spendsense.support@gmail.com" style="color: var(--green);">spendsense.support@gmail.com</a> with a sample SMS and we'll add support for it.</p>
         </div>
       </details>
 
@@ -311,7 +319,7 @@
         <div class="faq-answer">
           <p>A few things to check:</p>
           <ul>
-            <li>Confirm the SMS is from a supported bank (see the list above). If your bank isn't listed, try enabling Smart Sender Detection in Settings.</li>
+            <li>Confirm the SMS is from a supported bank (see the list above). If your bank isn't listed, contact us with a sample SMS and we'll add support.</li>
             <li>Some banks change their SMS sender IDs periodically. If your bank recently changed its sender ID, it may not match yet. Contact us with an example and we'll add it.</li>
             <li>On dual-SIM phones, make sure the SIM receiving bank SMS is set as the default SMS SIM in your device settings.</li>
             <li>Ensure SpendSense is not being killed by battery optimisation. Go to device Settings → Battery → SpendSense → set to "Unrestricted" or "Don't optimise".</li>
@@ -441,12 +449,12 @@
 
       <details>
         <summary>
-          What is Smart Sender Detection?
+          My bank is supported but some transactions aren't being captured — why?
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
-          <p>An optional feature that lets SpendSense capture transactions from banks not yet on the built-in sender ID list. When enabled, incoming SMS from unrecognised senders are briefly scanned in-memory for transaction patterns — nothing is stored unless a bank transaction is positively identified.</p>
-          <p>If a sender consistently sends transaction-style messages, SpendSense learns it and starts capturing those automatically. You can review and remove learned senders at any time in <strong>Settings → Smart Sender Detection</strong>.</p>
+          <p>Banks occasionally change their SMS format without notice. SpendSense uses pattern matching to extract amounts and merchants, so a format change can cause some messages to be missed.</p>
+          <p>If you notice a transaction that wasn't captured, contact us at <a href="mailto:spendsense.support@gmail.com" style="color: var(--green);">spendsense.support@gmail.com</a> with the SMS text (you can redact account numbers). We'll update the parser and push a fix in the next release.</p>
         </div>
       </details>
 
